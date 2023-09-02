@@ -4,6 +4,7 @@ package com.devsuperior.CRUD.dto;
 import com.devsuperior.CRUD.entities.Client;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
@@ -11,7 +12,7 @@ public class ClientDTO {
     private Long id;
     @NotBlank(message = "Campo requerido")
     private String name;
-
+    @Size(max = 11, min = 11, message = "Quantidade de dígitos insuficientes")
     @NotBlank(message = "Campo deve ser único")
     private String cpf;
     private Double income;
